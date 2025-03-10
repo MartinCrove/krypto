@@ -18,6 +18,7 @@ const router = useRouter()
 const userStore = useUserStore()
 const username = ref('')
 
+
 const access = () => {
    userStore.setUsername(username.value)
    router.push({name: 'about'})
