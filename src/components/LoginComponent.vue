@@ -1,16 +1,28 @@
 <template>
  <div>
-    <form>
-    <input type="text" placeholder="Username">
+    <form @submit.prevent="access">
+    <input v-model="username" type="text" placeholder="Username">
     <button>Log In</button>
     </form>
  </div>
 </template>
 
 <script setup>
+import {useRouter} from 'vue-router'
+import { useUserStore } from '@/stores/useUserStore';
+import ref from 'vue'
 
 
 
+const useRouter = useRouter()
+const userStore = useUserStore()
+const username = ref('')
+
+const access = () => {
+   userStore.setUsername(username.value)
+   useRouter.push({name: 'about'})
+
+}
 
 </script>
 
