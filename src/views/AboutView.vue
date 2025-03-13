@@ -1,17 +1,18 @@
 <template>
-  <div class="about">
-    <h1>{{ username }}</h1>
-  </div>
+   <NavBar/>
+    <CryptoPrices/>
+  
 </template>
 
 <script setup>
-import  {useUserStore} from '@/stores/useUserStore'
-import {computed} from 'vue'
+import CryptoPrices from '@/components/CryptoPrices.vue'
+import NavBar from '@/components/NavBar.vue';
 
 
-const userStore = useUserStore()
 
-const username = computed(() => userStore.username)
+
+
+
 
 
 
