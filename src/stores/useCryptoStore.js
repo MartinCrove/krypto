@@ -8,20 +8,16 @@ export const useCryptoStore = defineStore('cryptoValue', {
             btc: {bid: null, ask: null},
             eth: {bid: null, ask: null},
             usdt: {bid: null, ask: null},
-        },
-            
+        },            
 }),
     actions: {
-
         async fetchPrices(){
             this.error = null
-            try{
-                
+            try{                
                 const [btc, eth, usdt] = await Promise.all([
                     axios.get('https://criptoya.com/api/argenbtc/btc/ars'),
                     axios.get('https://criptoya.com/api/argenbtc/eth/ars'),
-                    axios.get('https://criptoya.com/api/argenbtc/usdt/ars'),
-            
+                    axios.get('https://criptoya.com/api/argenbtc/usdt/ars'),           
                 ])
 
                 this.prices.btc = {bid: btc.data.totalBid, ask: btc.data.totalAsk}

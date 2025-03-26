@@ -35,20 +35,20 @@ import apiClient from '@/services/apiClient';
 
 
 const userStore = useUserStore();
-const userName = computed(() => userStore.username);
+const username = computed(() => userStore.username);
 const cryptoPricesStore = useCryptoStore();
 const cryptoBalanceStore = useBalanceStore();
 
 const crypto = ref('');
 const amount = ref('');
-const unitPrice = ref(0);
+const price = ref(0);
 const totalReceived = ref(0);
 
 const formError = ref('');
 
 onMounted(async () => {
     try {
-        await cryptoBalanceStore.fetchBalances(userName.value);
+        await cryptoBalanceStore.fetchBalances(username.value);
     } catch (error) {
        console.log("error")
     }
@@ -58,8 +58,8 @@ const fetchCryptoPrice = async () => {
     if (!crypto.value) return;
 
     await cryptoPricesStore.fetchPrices();
-    unitPrice.value = cryptoPricesStore.prices[crypto.value]?.bid;
-    if (unitPrice.value) {
+    price.value = cryptoPricesStore.prices[crypto.value]?.bid;
+    if (price.value) {
         updatePrice();
     } else {
         formError.value = 'Error al obtener el precio de la criptomoneda';
@@ -67,8 +67,8 @@ const fetchCryptoPrice = async () => {
 };
 
 const updatePrice = () => {
-    if (amount.value && unitPrice.value) {
-        totalReceived.value = (amount.value * unitPrice.value).toFixed(2);
+    if (amount.value && price.value) {
+        totalReceived.value = (amount.value * price.value).toFixed(2);
     } else {
         totalReceived.value = 0;
     }
@@ -77,7 +77,7 @@ const updatePrice = () => {
 const resetForm = () => {
     crypto.value = '';
     amount.value = '';
-    unitPrice.value = 0;
+    price.value = 0;
     totalReceived.value = 0;
     formError.value = '';
 };
@@ -99,7 +99,7 @@ const submitTransaction = async () => {
     const formattedDatetime = now.toISOString();
 
     const transaction = {
-        user_id: userName.value,
+        user_id: username.value,
         action: 'sale',
         crypto_code: crypto.value,
         crypto_amount: amount.value,
