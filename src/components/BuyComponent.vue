@@ -103,4 +103,8 @@ const submitTransaction = async () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.error-message{
+  color: red;
+}
+</style>

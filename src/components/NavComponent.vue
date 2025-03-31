@@ -1,7 +1,7 @@
 <template>
   <strong>KRYPTO</strong>
     <nav class="nav-bar">
-      <router-link to="/about">Precios</router-link> |
+      <router-link to="/initial">Precios</router-link> |
       <router-link to="/buy">Comprar</router-link> |
       <router-link to="/sell">Vender</router-link> |
       <router-link to="/transaction">Transacciones</router-link>
