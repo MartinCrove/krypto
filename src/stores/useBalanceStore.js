@@ -25,6 +25,11 @@ export const useBalanceStore = defineStore('cryptoBalance', {
                 console.error(error);
             }
         },
+        resetBalances() {
+            this.balances.btc = 0;
+            this.balances.eth = 0;
+            this.balances.usdt = 0;         
+        },
 
         updateBalance(cryptoCode, amount, action) {
             const parsedAmount = parseFloat(amount);

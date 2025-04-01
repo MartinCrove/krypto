@@ -11,12 +11,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  
+}
+body{
+  margin:0px;
+  padding: 0px;
 }
 
-nav {
-  padding: 30px;
+ul{
+  list-style: none;
 }
+
+
 
 nav a {
   font-weight: bold;

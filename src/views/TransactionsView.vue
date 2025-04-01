@@ -1,13 +1,12 @@
 <template>
-   <NavComponent/>
-   <SellComponent/>
-   
+    <NavComponent/>
+  <TransactionComponent/>
  
 </template>
 
 <script setup>
 import NavComponent from '@/components/NavComponent.vue';
-import SellComponent from '@/components/SellComponent.vue';
+import TransactionComponent from '@/components/TransactionComponent.vue';
 
 </script>
 
