@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   <h1>KRYPTO</h1>
-    <H2>Log In</H2>
+    
       <LoginComponent/>
   
   </div>
