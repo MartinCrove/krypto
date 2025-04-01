@@ -75,7 +75,7 @@ const access = () => {
   display: flex;
   justify-content: center;
   padding-top: 100px;
-  background-color: #f8fafc;
+  background-color: #86888a;
 }
 
 .login-form {
