@@ -65,7 +65,7 @@ onMounted(fetchTransactions);
 </script>
 
 <style scoped>
-/* Base styles */
+
 .transactions-container {
   max-width: 600px;
   margin: 2rem auto;

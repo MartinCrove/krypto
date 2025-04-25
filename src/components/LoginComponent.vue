@@ -98,7 +98,7 @@ const access = () => {
 
 .input-group {
   margin-bottom: 20px;
-  padding: 0 10px; /* Añadido para separar del borde */
+  padding: 0 10px; 
 }
 
 .login-input {
@@ -116,7 +116,7 @@ const access = () => {
 }
 
 .login-btn {
-  width: calc(100% - 20px); /* Ajustado para considerar el padding */
+  width: calc(100% - 20px); 
   margin: 0 10px;
   padding: 12px;
   background-color: #c2a77a;
@@ -134,7 +134,7 @@ const access = () => {
 
 .error-messages {
   margin-top: 15px;
-  padding: 0 10px; /* Añadido para alinear con los inputs */
+  padding: 0 10px; 
 }
 
 .error-message {
